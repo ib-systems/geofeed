@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+
+if git diff --cached --quiet -- range.csv; then
+  exit 0
+fi
+
+git show :range.csv | python3 scripts/validate_geofeed.py -

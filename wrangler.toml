@@ -1,0 +1,12 @@
+name = "ibsystems-geofeed"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[[rules]]
+type = "Text"
+globs = ["**/*.csv"]
+fallthrough = false
+
+routes = [
+  { pattern = "ib.systems/range.csv", zone_name = "ib.systems" }
+]
